@@ -1,0 +1,25 @@
+Prerequisites
+==============
+python
+virtualenv, which you can install with "sudo easy_install virtualenv"
+
+How to install
+==============
+git clone git://github.com/jawspeak/twu-pdf-award-printers.git
+
+cd twu-pdf-award-printers
+virtualenv twu_printer_env
+. twu_printer_env/bin/activate
+./bootstrap.py  #this installs everything into your virtualenv
+
+How to Run
+================
+cp students.txt.example students.txt
+edit the students.txt file so other people can use in
+./award_generator.py [awards|graduation]
+then open the resulting Awards_rendered.pdf and Graduation_certs_rendered.pdf files
+
+(You may need to edit the background files, which were exported from PowerPoint. 
+They were exported in a higher than default resolution in order to make them non-grainey.
+They were then rotated 90 degrees in Preview.app.
+If you want to reposition the text some, you can in award_generator.py)

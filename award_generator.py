@@ -1,4 +1,4 @@
-#!/usr/bin/python2.4
+#!/usr/bin/env python
 # -*- coding: latin-1 -*-
 import sys
 
@@ -33,27 +33,28 @@ class AwardPrinter:
   def _draw_award(self, student):
     name = student.split(',')[0].strip()
     award = student.split(',')[1].strip()
-    self.pdf.setFont("Helvetica", 28)    
+    self.pdf.setFont("Helvetica", 28)
+    # play with these dimensions if you want to move around the text in the screen
     self.pdf.drawCentredString(-5.4 * inch, 4.5 * inch, name.encode('latin-1'))
     self.pdf.setFont("Helvetica", 18)
+    # play with these dimensions if you want to move around the text in the screen
     self.pdf.drawCentredString(-5.4 * inch, 3.5 * inch, award)
     
   def _draw_certificate(self, student):
     name = student.split(',')[0].strip()    
     self.pdf.setFont("Helvetica", 32)
+    # play with these dimensions if you want to move around the text in the screen
     self.pdf.drawCentredString(-5.75 * inch, 5.5 * inch, name.encode('latin-1'))
 
   
 def main():                
-  print sys.argv
   if len(sys.argv) != 2:
     die()
-  if sys.argv[1] == 'awards':
+  if sys.argv[1] == 'graduation':
     printer = AwardPrinter('Graduation_certs_rendered.pdf', 'backgrounds/TWUCertificate_90.jpg', AwardPrinter._draw_certificate)  
-    printer.draw(open('students.txt').readlines())  
-  elif sys.argv[1] == 'graduation':
+  elif sys.argv[1] == 'awards':
     printer = AwardPrinter('Awards_rendered.pdf', 'backgrounds/award_certificate_90.jpg', AwardPrinter._draw_award)
-    printer.draw(open('students.txt').readlines())
+  printer.draw(open('students.txt').readlines())
 
 def die():
   print ("usage: python %s [awards|graduation]") % __file__
