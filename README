@@ -19,13 +19,11 @@ edit the students.txt file so other people can use in
 ./award_generator.py [awards|graduation]
 then open the resulting Awards_rendered.pdf and Graduation_certs_rendered.pdf files
 
-(You may need to edit the background files, which were exported from PowerPoint. 
-They were exported in a higher than default resolution in order to make them non-grainey.
-They were then rotated 90 degrees in Preview.app.
-If you want to reposition the text some, you can in award_generator.py)
+To change the background image used for the certificate:
 
 Open powerpoint/TWUCertificatedefault.ppt
 Change as appropriate
 File > Save As > Choose format as jpeg and size 1280 x 960
 It will save the presentation to a folder you choose
 Go into that folder and replace backgrounds/TWUCertificate_90.jpg with the new jpg file
+Open TWUCertificate_90.jpg in Preview and rotate it 90 degrees (Cmd - R)
