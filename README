@@ -23,3 +23,9 @@ then open the resulting Awards_rendered.pdf and Graduation_certs_rendered.pdf fi
 They were exported in a higher than default resolution in order to make them non-grainey.
 They were then rotated 90 degrees in Preview.app.
 If you want to reposition the text some, you can in award_generator.py)
+
+Open powerpoint/TWUCertificatedefault.ppt
+Change as appropriate
+File > Save As > Choose format as jpeg and size 1280 x 960
+It will save the presentation to a folder you choose
+Go into that folder and replace backgrounds/TWUCertificate_90.jpg with the new jpg file
